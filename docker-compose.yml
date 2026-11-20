@@ -1,0 +1,11 @@
+services:
+  nft-offer-bot:
+    build: .
+    container_name: nft-offer-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      DATABASE_PATH: /app/data/offers.sqlite3
+    volumes:
+      - ./data:/app/data
